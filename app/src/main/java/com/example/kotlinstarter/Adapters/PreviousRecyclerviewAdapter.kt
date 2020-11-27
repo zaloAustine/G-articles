@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.kotlinstarter.R
 import com.example.kotlinstarter.models.Doc
 import com.example.kotlinstarter.models.PreviousDocs
@@ -17,7 +19,9 @@ class PreviousRecyclerviewAdapter(
 
     class DnaViewHolder(view:View) :RecyclerView.ViewHolder(view){
         val textView: TextView =  view.findViewById(R.id.textView)
-        val authorName:TextView = view.findViewById(R.id.authorName)
+        val journal:TextView = view.findViewById(R.id.journal)
+        val cardView: CardView = view.findViewById(R.id.cardView)
+
 
     }
 
@@ -29,6 +33,16 @@ class PreviousRecyclerviewAdapter(
 
     override fun onBindViewHolder(holder: DnaViewHolder, position: Int) {
         holder.textView.text = dataSet[position].title_display
+        holder.journal.text = dataSet[position].journal
+
+//        //if position of item is a factor of 3 the fill the width
+//        if(position%3==0){
+//            //full width
+//            val layoutParams = holder.cardView.layoutParams as StaggeredGridLayoutManager.LayoutParams
+//            layoutParams.isFullSpan = true
+//        }
+
+
 
     }
 

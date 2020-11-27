@@ -11,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.androidstudy.networkmanager.Monitor
 import com.androidstudy.networkmanager.Tovuti
 import com.example.kotlinstarter.Adapters.DnaRecyclerviewAdapter
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     private fun setUpRecyclerView() {
 
         recyclerview.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
             itemAnimator = DefaultItemAnimator()
             adapter = recyclerAdapter
         }
@@ -75,6 +76,8 @@ class MainActivity : AppCompatActivity() {
             dataSet.clear()
             it?.let { it1 -> dataSet.addAll(it1) }
             Timber.e(dataSet.size.toString())
+
+            totalHits.text = dataSet.size.toString()
 
             recyclerAdapter!!.notifyDataSetChanged()
         })
