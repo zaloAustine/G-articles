@@ -13,5 +13,5 @@ interface PreviousDocsDao {
     suspend fun getPreviousArticles():List<PreviousDocs>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertAllPreviousArticles(doc: ArrayList<PreviousDocs>)
+    suspend fun insertAllPreviousArticles(doc: PreviousDocs)
 }

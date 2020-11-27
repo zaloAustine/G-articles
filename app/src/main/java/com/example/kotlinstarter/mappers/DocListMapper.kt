@@ -3,13 +3,13 @@ package com.example.kotlinstarter.mappers
 import com.example.kotlinstarter.models.Doc
 import com.example.kotlinstarter.models.PreviousDocs
 
-internal fun List<Doc>.toPreviousDoc():PreviousDocs =
-    PreviousDocs(
-        this.iterator().next().id,
-        this.iterator().next().article_type,
-        this.iterator().next().eissn,
-        this.iterator().next().journal,
-        this.iterator().next().publication_date,
-        this.iterator().next().score,
-        this.iterator().next().title_display,
+internal fun Doc.toPreviousDoc():PreviousDocs =
+     PreviousDocs(
+        this.id,
+        this.article_type,
+        this.eissn,
+        this.journal,
+        this.publication_date,
+        this.score,
+        this.title_display
     )

@@ -3,7 +3,6 @@ package com.example.kotlinstarter.Database.Dao
 import androidx.room.*
 import com.example.kotlinstarter.models.Doc
 
-
 @Dao
 interface ArticleDao {
 
