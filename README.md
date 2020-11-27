@@ -1,6 +1,6 @@
 # G-articles
-<img src="https://user-images.githubusercontent.com/42929865/100434659-e2f34000-30ad-11eb-9f73-239e8e7005e1.jpeg" width="45%"></img>
-<img src="https://user-images.githubusercontent.com/42929865/100434668-e38bd680-30ad-11eb-9721-8246e6f8ae8b.jpeg" width="45%"></img> 
-<img src="https://user-images.githubusercontent.com/42929865/100434862-32397080-30ae-11eb-9b09-da6dc1c3bd85.jpeg" width="45%"></img> 
+<img src="https://user-images.githubusercontent.com/42929865/100435131-8c3a3600-30ae-11eb-9b1c-f3214ddcfdb5.jpeg" width="30%"></img> <img src="https://user-images.githubusercontent.com/42929865/100435246-bb50a780-30ae-11eb-98a7-f5babc9d3f3e.jpeg" width="30%"></img> <img src="https://user-images.githubusercontent.com/42929865/100435431-fb178f00-30ae-11eb-9c57-67e967701814.jpeg" width="30%"></img> 
+
+
 Android app that searches articles from remote server and caches them locally with realtime syc with the new data when Network change occur (Offline)
 
