@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <data>
+        <variable
+            name="doc"
+            type="com.example.kotlinstarter.models.Doc" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+    android:id="@+id/cardView"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:cardCornerRadius="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="12dp"
     app:cardElevation="4dp"
-    android:layout_marginLeft="4dp"
-    android:layout_marginRight="4dp"
-    android:layout_marginBottom="8dp">
+    app:cardBackgroundColor="@color/white"
+  >
+
 
     <LinearLayout
         android:layout_margin="8dp"
@@ -16,19 +28,27 @@
         android:orientation="vertical"
         android:layout_height="wrap_content">
 
+
+
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/journal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:textSize="20sp"
+            android:text="@{doc.article_type}"
+            android:textStyle="bold"
+            android:textColor="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/authorName"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:textColor="@color/black"
+            android:text="@{doc.title_display}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,3 +56,4 @@
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
+</layout>

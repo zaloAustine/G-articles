@@ -9,6 +9,10 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
+    buildFeatures {
+        dataBinding true
+    }
+
     defaultConfig {
         applicationId "com.example.kotlinstarter"
         minSdkVersion 16
@@ -49,6 +53,7 @@ android {
 dependencies {
 
     def room_version = "2.2.5"
+    def work_version = "2.4.0"
 
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -114,6 +119,12 @@ dependencies {
 
     //network Manager
     implementation 'com.github.jumadeveloper:networkmanager:0.0.2'
+
+    //motion layout
+    implementation 'com.android.support.constraint:constraint-layout:2.0.0-beta1'
+
+    // worker
+    implementation "androidx.work:work-runtime-ktx:$work_version"
 
 
 }

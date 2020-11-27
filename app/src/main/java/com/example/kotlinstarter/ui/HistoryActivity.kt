@@ -6,6 +6,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.kotlinstarter.Adapters.DnaRecyclerviewAdapter
 import com.example.kotlinstarter.Adapters.PreviousRecyclerviewAdapter
 import com.example.kotlinstarter.R
@@ -16,7 +17,10 @@ import com.example.kotlinstarter.utils.Loading
 import com.example.kotlinstarter.viewmodels.HistoryActivityViewModel
 import com.example.kotlinstarter.viewmodels.MainActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_history.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.recyclerview
+import kotlinx.android.synthetic.main.activity_main.searchProgress
 import timber.log.Timber
 @AndroidEntryPoint
 class HistoryActivity : AppCompatActivity() {
@@ -36,6 +40,10 @@ class HistoryActivity : AppCompatActivity() {
         observeLoadingState()
     }
 
+    fun observeCount(){
+        total.text = dataSet.size.toString()
+    }
+
     private fun observeLoadingState() {
         historyActivityViewModel.viewState.observe(this, {
             Timber.e(it.toString())
@@ -52,6 +60,7 @@ class HistoryActivity : AppCompatActivity() {
             dataSet.clear()
             it?.let { it1 -> dataSet.addAll(it) }
             Timber.e(dataSet.size.toString())
+            observeCount()
 
             recyclerAdapter!!.notifyDataSetChanged()
         })
@@ -64,7 +73,7 @@ class HistoryActivity : AppCompatActivity() {
     private fun setUpRecyclerView() {
 
         recyclerview.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
             itemAnimator = DefaultItemAnimator()
             adapter = recyclerAdapter
         }

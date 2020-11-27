@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -31,9 +35,32 @@
             android:drawableEnd="@drawable/search" />
 
     </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_margin="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Total Hits"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="12dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/totalHits"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
 
     <ProgressBar
+        android:theme="@style/progressBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/searchProgress"/>
@@ -50,3 +77,4 @@
 
 
 </LinearLayout>
+</androidx.core.widget.NestedScrollView>
