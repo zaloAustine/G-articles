@@ -1,3 +1,4 @@
+include ':domain'
 include ':data-local'
 include ':app'
 rootProject.name = "KotlinStarter"
