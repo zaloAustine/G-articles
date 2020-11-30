@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.flow
 class ArticleRepository(
     private val articlesApi: ArticlesApi
 ):IArticlesRepository {
-    override suspend fun getCurrentLocation(search: String): Flow<List<DocDomain>> = flow {
+    override suspend fun getArticles(search: String): Flow<List<DocDomain>> = flow {
         val result = articlesApi.getArticles(title = search)
         val articleList = mutableListOf<DocDomain>()
         result.response.docs.forEach {  doc ->
