@@ -10,7 +10,6 @@ import com.example.kotlinstarter.mappers.toPresenter
 import com.example.kotlinstarter.models.DocPresenter
 import com.example.kotlinstarter.models.states.Error
 import com.example.kotlinstarter.models.states.MainActivityArticleViewState
-import com.example.kotlinstarter.repositories.MainActivityRepository
 import com.example.kotlinstarter.utils.Done
 import com.example.kotlinstarter.utils.Loading
 import com.example.kotlinstarter.utils.ViewState

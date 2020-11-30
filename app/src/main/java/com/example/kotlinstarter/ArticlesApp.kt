@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.kotlinstarter.di.networkModule
 import com.example.kotlinstarter.di.remoteDataSourceModule
 import com.example.kotlinstarter.di.useCaseModule
+import com.example.kotlinstarter.di.viewModelModule
 import com.facebook.stetho.BuildConfig
 import com.facebook.stetho.Stetho
 import org.koin.android.ext.koin.androidContext
@@ -19,7 +20,7 @@ class ArticlesApp:Application() {
             androidContext(this@ArticlesApp)
             modules(
                 networkModule,
-             //   viewModelModule,
+                viewModelModule,
                 // localDataSourceModule,
                 remoteDataSourceModule,
                 useCaseModule
