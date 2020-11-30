@@ -1,5 +1,6 @@
 package com.example.kotlinstarter.ui
 
+/*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,19 +10,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.kotlinstarter.Adapters.PreviousRecyclerviewAdapter
 import com.example.kotlinstarter.R
-import com.example.kotlinstarter.utils.Done
-import com.example.kotlinstarter.utils.Loading
 import com.example.kotlinstarter.viewmodels.HistoryActivityViewModel
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_history.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.recyclerview
 import kotlinx.android.synthetic.main.activity_main.searchProgress
-import timber.log.Timber
-@AndroidEntryPoint
+*/
+/*
 class HistoryActivity : AppCompatActivity() {
     private var recyclerAdapter: PreviousRecyclerviewAdapter? = null
-    private var dataSet: MutableList<PreviousDocs> = ArrayList()
+   // private var dataSet: MutableList<PreviousDocs> = ArrayList()
 
 
     private val historyActivityViewModel: HistoryActivityViewModel by viewModels()
@@ -29,14 +27,23 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
 
-        recyclerAdapter = PreviousRecyclerviewAdapter(dataSet)
+        *//*
+
+*/
+/*recyclerAdapter = PreviousRecyclerviewAdapter(dataSet)
         setUpRecyclerView()
         getPreviousDoc()
         observePreviousDocs()
-        observeLoadingState()
+        observeLoadingState()*//*
+*/
+/*
+
     }
 
-    fun observeCount(){
+    *//*
+
+*/
+/*fun observeCount(){
         total.text = dataSet.size.toString()
     }
 
@@ -73,5 +80,8 @@ class HistoryActivity : AppCompatActivity() {
             itemAnimator = DefaultItemAnimator()
             adapter = recyclerAdapter
         }
-    }
-}
+    }*//*
+*/
+/*
+
+}*/

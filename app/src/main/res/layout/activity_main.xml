@@ -1,80 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-<LinearLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.MainActivity">
+    <data>
 
-    <androidx.cardview.widget.CardView
-        android:layout_margin="12dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="24dp"
+    </data>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-
-        <EditText
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:id="@+id/searchView"
-            android:padding="12dp"
-            android:maxLines="1"
-            android:lines="1"
-            android:hint="@string/search"
-            android:drawableRight="@drawable/search"
-            android:background="@color/white"
-            android:textColorHint="@android:color/darker_gray"
-            android:textColor="@android:color/darker_gray"
             android:layout_height="match_parent"
-            android:drawableEnd="@drawable/search" />
+            android:orientation="vertical"
+            tools:context=".ui.MainActivity">
 
-    </androidx.cardview.widget.CardView>
-    <LinearLayout
-        android:layout_margin="12dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:text="Total Hits"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_marginRight="12dp"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/totalHits"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
 
-    <ProgressBar
-        android:theme="@style/progressBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchProgress"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/searchView"
+                    android:padding="12dp"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:hint="@string/search"
+                    android:drawableRight="@drawable/search"
+                    android:background="@color/white"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_height="match_parent"
+                    android:drawableEnd="@drawable/search" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="Total Hits"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/totalHits"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:theme="@style/progressBar"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <ProgressBar
+                android:theme="@style/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/searchProgress" />
 
 
-</LinearLayout>
-</androidx.core.widget.NestedScrollView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:theme="@style/progressBar"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

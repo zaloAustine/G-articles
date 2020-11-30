@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.kotlinstarter.databinding.DnaListViewBinding
 
 
+/*
 class DnaRecyclerviewAdapter(
     private val dataSet: MutableList<Doc>
 ): RecyclerView.Adapter<DnaRecyclerviewAdapter.DnaViewHolder>() {
@@ -55,3 +55,4 @@ class DnaRecyclerviewAdapter(
 
 }
 
+*/

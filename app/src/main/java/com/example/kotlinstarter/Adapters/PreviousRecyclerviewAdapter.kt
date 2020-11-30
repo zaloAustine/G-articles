@@ -8,6 +8,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinstarter.R
 
+/*
 class PreviousRecyclerviewAdapter(
     private val dataSet: MutableList<PreviousDocs>
 ): RecyclerView.Adapter<PreviousRecyclerviewAdapter.DnaViewHolder>() {
@@ -45,3 +46,4 @@ class PreviousRecyclerviewAdapter(
     override fun getItemCount():Int = dataSet.size
 }
 
+*/

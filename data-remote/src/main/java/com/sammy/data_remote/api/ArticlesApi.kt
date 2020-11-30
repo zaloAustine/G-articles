@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface ArticlesApi {
     @GET("search")
-    fun getArticles(
+    suspend fun getArticles(
         @Query("q") title: String
     ): ArticleData
 }

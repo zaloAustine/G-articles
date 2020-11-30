@@ -3,9 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <data>
-        <variable
-            name="doc"
-            type="com.example.kotlinstarter.models.Doc" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -36,7 +33,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
             android:textSize="20sp"
-            android:text="@{doc.article_type}"
             android:textStyle="bold"
             android:textColor="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +44,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="@{doc.title_display}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

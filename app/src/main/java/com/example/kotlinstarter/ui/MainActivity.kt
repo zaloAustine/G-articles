@@ -4,49 +4,59 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.androidstudy.networkmanager.Monitor
-import com.androidstudy.networkmanager.Tovuti
-import com.example.kotlinstarter.Adapters.DnaRecyclerviewAdapter
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import com.example.kotlinstarter.R
-import com.example.kotlinstarter.utils.Done
-import com.example.kotlinstarter.utils.Loading
+import com.example.kotlinstarter.databinding.ActivityMainBinding
 import com.example.kotlinstarter.viewmodels.MainActivityViewModel
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
-import timber.log.Timber
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-
-@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private var recyclerAdapter: DnaRecyclerviewAdapter? = null
-    private var dataSet: MutableList<Doc> = ArrayList()
+   // private var recyclerAdapter: DnaRecyclerviewAdapter? = null
 
 
-    private val mainActivityViewModel: MainActivityViewModel by viewModels()
+    private val mainActivityViewModel  by viewModel<MainActivityViewModel>()
+    private lateinit var binding:ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
-        searchView.addTextChangedListener(textWatcher)
+       /* searchView.addTextChangedListener(textWatcher)
 
         recyclerAdapter = DnaRecyclerviewAdapter(dataSet)
         setUpRecyclerView()
         getDna()
         observeDna()
         observeQuery()
-        observeLoadingState()
+        observeLoadingState()*/
+        mainActivityViewModel.executeGetArticles("dna")
+        observe()
     }
 
-    private fun observeLoadingState() {
+    private fun observe() {
+        mainActivityViewModel.articleViewState.observe(this, { state ->
+            if(state.isLoading){
+                Log.d("MainActivity","******LOADING**********")
+            }
+            state.articleResults?.let { result ->
+                Log.d("MainActivity","******RESULT**********===>${result}<===*******")
+            }
+            state.error?.let { error ->
+                Log.e("MainActivity","**********ERROR********==>${error.message}")
+            }
+        })
+    }
+
+
+    /*private fun observeLoadingState() {
         mainActivityViewModel.viewState.observe(this, {
             Timber.e(it.toString())
             when (it) {
@@ -55,22 +65,22 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
-    }
+    }*/
 
-    private fun setUpRecyclerView() {
+    /*private fun setUpRecyclerView() {
 
         recyclerview.apply {
             layoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
             itemAnimator = DefaultItemAnimator()
             adapter = recyclerAdapter
         }
-    }
+    }*/
 
-    private fun getDna() {
+    /*private fun getDna() {
         getConnection()
-    }
+    }*/
 
-    fun observeDna() {
+    /*fun observeDna() {
         mainActivityViewModel.dnaLiveData.observe(this, {
             dataSet.clear()
             it?.let { it1 -> dataSet.addAll(it1) }
@@ -80,19 +90,19 @@ class MainActivity : AppCompatActivity() {
 
             recyclerAdapter!!.notifyDataSetChanged()
         })
-    }
+    }*/
 
-    fun observeQuery() {
+    /*fun observeQuery() {
         mainActivityViewModel.queryString.observe(this, { searchQuery ->
             if (!searchQuery.trim().isEmpty()) {
                 getDna()
             }
 
         })
-    }
+    }*/
 
 
-    private val textWatcher = object : TextWatcher {
+    /*private val textWatcher = object : TextWatcher {
         override fun afterTextChanged(s: Editable?) {
         }
 
@@ -111,9 +121,9 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-    }
+    }*/
 
-    private fun getConnection(){
+    /*private fun getConnection(){
 
         Tovuti.from(this).monitor(object : Monitor.ConnectivityListener {
             override fun onConnectivityChanged(
@@ -133,10 +143,10 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-    }
+    }*/
 
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.home_menu, menu)
         return true
     }
@@ -148,7 +158,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         return true
-    }
+    }*/
 }
 
 
