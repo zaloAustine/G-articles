@@ -1,6 +1,7 @@
 package com.sammy.data_remote.repository
 
 import com.sammy.data_remote.api.ArticlesApi
+import com.sammy.data_remote.mapper.toDomain
 import com.sammy.domain.model.DocDomain
 import com.sammy.domain.repository.IArticlesRepository
 import kotlinx.coroutines.flow.Flow
@@ -12,8 +13,8 @@ class ArticleRepository(
     override suspend fun getCurrentLocation(search: String): Flow<List<DocDomain>> = flow {
         val result = articlesApi.getArticles(title = search)
         val articleList = mutableListOf<DocDomain>()
-        result.response.forEach {  article ->
-            articleList.add(article)
+        result.response.docs.forEach {  doc ->
+            articleList.add(doc.toDomain())
         }
         emit(articleList)
     }
