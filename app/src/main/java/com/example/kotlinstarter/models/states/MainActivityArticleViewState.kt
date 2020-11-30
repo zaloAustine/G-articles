@@ -5,5 +5,5 @@ import com.example.kotlinstarter.models.DocPresenter
 data class MainActivityArticleViewState(
     val isLoading: Boolean,
     val error: Error?,
-    val locationResults: List<DocPresenter>?
+    val articleResults: List<DocPresenter>?
 )
