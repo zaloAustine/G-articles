@@ -12,8 +12,8 @@ class ArticleRepository(
     override suspend fun getCurrentLocation(search: String): Flow<List<DocDomain>> = flow {
         val result = articlesApi.getArticles(title = search)
         val articleList = mutableListOf<DocDomain>()
-        result.response.forEach { article ->
-           articleList.add(articleList)
+        result.response.forEach {  article ->
+            articleList.add(article)
         }
         emit(articleList)
     }
