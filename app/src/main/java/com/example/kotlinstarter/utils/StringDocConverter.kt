@@ -1,7 +1,6 @@
 package com.example.kotlinstarter.utils
 
 import androidx.room.TypeConverter
-import com.example.kotlinstarter.models.Doc
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

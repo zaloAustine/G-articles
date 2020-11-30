@@ -16,7 +16,6 @@ import com.androidstudy.networkmanager.Monitor
 import com.androidstudy.networkmanager.Tovuti
 import com.example.kotlinstarter.Adapters.DnaRecyclerviewAdapter
 import com.example.kotlinstarter.R
-import com.example.kotlinstarter.models.Doc
 import com.example.kotlinstarter.utils.Done
 import com.example.kotlinstarter.utils.Loading
 import com.example.kotlinstarter.viewmodels.MainActivityViewModel

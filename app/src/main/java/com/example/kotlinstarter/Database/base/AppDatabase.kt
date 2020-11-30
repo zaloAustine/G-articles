@@ -5,8 +5,6 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.kotlinstarter.Database.Dao.ArticleDao
 import com.example.kotlinstarter.Database.Dao.PreviousDocsDao
-import com.example.kotlinstarter.models.Doc
-import com.example.kotlinstarter.models.PreviousDocs
 import com.example.kotlinstarter.utils.StringDocConverter
 import com.example.kotlinstarter.utils.StringListConverter
 

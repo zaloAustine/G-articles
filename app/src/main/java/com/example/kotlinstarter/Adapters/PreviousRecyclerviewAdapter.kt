@@ -6,11 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.kotlinstarter.R
-import com.example.kotlinstarter.models.Doc
-import com.example.kotlinstarter.models.PreviousDocs
-import org.w3c.dom.Text
 
 class PreviousRecyclerviewAdapter(
     private val dataSet: MutableList<PreviousDocs>

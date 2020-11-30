@@ -5,8 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.kotlinstarter.models.Doc
-import com.example.kotlinstarter.models.PreviousDocs
 import com.example.kotlinstarter.repositories.MainActivityRepository
 import com.example.kotlinstarter.utils.Done
 import com.example.kotlinstarter.utils.Loading

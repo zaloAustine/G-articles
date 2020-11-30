@@ -1,12 +1,8 @@
 package com.example.kotlinstarter.repositories
 
 import android.content.Context
-import androidx.lifecycle.viewModelScope
 import com.example.kotlinstarter.Database.Dao.ArticleDao
 import com.example.kotlinstarter.Database.Dao.PreviousDocsDao
-import com.example.kotlinstarter.mappers.toPreviousDoc
-import com.example.kotlinstarter.models.Doc
-import com.example.kotlinstarter.models.PreviousDocs
 import com.example.kotlinstarter.services.MainActivityApiService
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.GlobalScope

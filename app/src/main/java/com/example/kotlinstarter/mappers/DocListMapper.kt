@@ -1,8 +1,5 @@
 package com.example.kotlinstarter.mappers
 
-import com.example.kotlinstarter.models.Doc
-import com.example.kotlinstarter.models.PreviousDocs
-
 internal fun Doc.toPreviousDoc():PreviousDocs =
      PreviousDocs(
         this.id,
